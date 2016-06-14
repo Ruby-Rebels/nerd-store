@@ -10,13 +10,13 @@ Product.create([
     {
       name: "Lightsaber",
       description: "Part laser, part samuri sword, all awesome. The lightsaber is an elogant weapon for a more civilized age, not nearly as clumsy as a blaster",
-      image: "https://i.ytimg.com/vi/p2iUzSjyue0/maxresdefault.jpg",
+      image: "http://25.media.tumblr.com/d2456964024018fd930338c099371104/tumblr_n2m73lTx2Q1svn82uo1_400.gif",
       price: 270 # 270.10
     },
     {
       name: "WNYX Mug",
       description: "Get your morning news once you wake up with a cup of joe from... well Joe. He made it with his homemade duct tape",
-      image: "http://ecx.images-amazon.com/images/I/61xFcKGhXRL._SY355_.jpg",
+      image: "http://s32.postimg.org/6mceui22t/wnyx_mug.png",
       price: 2 # 1.50
     },
     {

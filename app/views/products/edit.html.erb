@@ -4,7 +4,7 @@
       <div class="product_single">
         <h1>Edit Product</h1>
 
-        <%= form_tag "/novelties/#{@product.id}", method: :patch do %>
+        <%= form_tag "/products/#{@product.id}", method: :patch do %>
 
           <div>
             <%= label_tag :name %>

@@ -1,9 +1,9 @@
  html,body{
-  background: #8B5F49 url(http://www.myfreetextures.com/wp-content/uploads/2013/07/old-brown-vintage-parchment-paper-texture.jpg) no-repeat top;
+  background: #8B5F49 url(steampunk_wallpaper.jpg) no-repeat top;
     background-size: cover;
  }
  header{
-  margin-bottom:5%;
+  margin-bottom: 9%;
  }
  .navbar-default{
   background: transparent;
@@ -50,16 +50,23 @@ header h1{
   color:#333;
  }
  .product_single{
-  background: #8B5F49;
+  background: #665441;
   background:rgba(139,95,73,0.5);
   padding:0 15px 15px 15px;
   color:#FFF;
   box-shadow: 0 3px 3px rgba(0,0,0,0.35);
-  min-height: 550px;
+  min-height: 580px;
+  border-radius: 15px;
+  border: solid #575757 4px;
+  margin-bottom: 15px;
  }
  .product_single_image{
   margin-bottom: 20px;
  }
  .btn{
   margin-top:20px;
+ }
+
+ .product_header{
+  height: 50px;
  }
