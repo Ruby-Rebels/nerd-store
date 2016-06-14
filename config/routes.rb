@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get '/' => 'novelties#index'
-  get '/novelties' => 'novelties#index'
-  get '/novelties/new' => 'novelties#new'
-  post '/novelties' => 'novelties#create'
-  get '/novelties/:id' => 'novelties#show'
-  get '/novelties/:id/edit' => 'novelties#edit'
-  patch '/novelties/:id' => 'novelties#update'
-  delete '/novelties/:id' => 'novelties#delete'
+  get '/' => 'products#index'
+  get '/products' => 'products#index'
+  get '/products/new' => 'products#new'
+  post '/products' => 'products#create'
+  get '/products/:id' => 'products#show'
+  get '/products/:id/edit' => 'products#edit'
+  patch '/products/:id' => 'products#update'
+  delete '/products/:id' => 'products#delete'
 end

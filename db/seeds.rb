@@ -1,6 +1,6 @@
-Novelty.destroy_all
+Product.destroy_all
 
-Novelty.create([
+Product.create([
     {
       name: "Sonic Screwdriver",
       description: "The Doctor's sciencey magic wand to get out of tight spots. Note: does not work on wood",
