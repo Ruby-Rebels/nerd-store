@@ -1,3 +1,4 @@
+Product.destroy_all
 Product.create!([
   {name: "Samsung Galaxy s7 Edg", price: "500.0", description: "A smarter than smart phone", image: "http://cdn.slashgear.com/wp-content/uploads/2016/03/samsung-galaxy-s7-edge-sg-16.jpg"},
   {name: "Surface", price: "450.0", description: "Microsoft product - hopefully works", image: "https://dri1.img.digitalrivercontent.net/Storefront/Company/msintl/images/English/en-INTL-Surface-Pro4-SU3-00001/Spin/en-INTL-Surface-Pro4-SU3-00001-SP01.jpg"},

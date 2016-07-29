@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
-    if params[:sort] && params[:sort_order]
+    if params[:blah] && params[:blah_blah]
       @products = Product.order(params[:sort] => params[:sort_order])
     end
     if params[:discount] == "true"
@@ -30,6 +30,7 @@ class ProductsController < ApplicationController
     else
       @product = Product.find_by(id: params[:id])
     end
+    @supplier = @product.supplier
   end
 
   def edit
