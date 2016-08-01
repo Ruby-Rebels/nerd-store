@@ -35,8 +35,13 @@
             <li><a href="/products?sort=price&sort_order=asc">Sort by Price: lowest to highest</a></li>
             <li><a href="/products?sort=price&sort_order=desc">Sort by Price: highest to lowest</a></li>
             <li><a href="/products/random">Random</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+            <% if current_user.nil? %>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/signup">Sign Up</a></li>
+            <% end %>
+            <% if current_user %>
+              <li><%= link_to "Logout", "/logout", method: 'delete' %></li>
+            <% end %>
             <li class="divider"></li>
             <li><a href="/products">Products</a></li>
           </ul>
