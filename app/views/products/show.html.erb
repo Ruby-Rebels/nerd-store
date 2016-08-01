@@ -18,3 +18,9 @@
       </div>
     </div>
   </section>
+  <%= form_tag("/orders", method: 'post') do %>
+    <%= label_tag(:quantity) %>
+    <%= text_field_tag(:quantity) %>
+    <%= hidden_field_tag(:product_id, @product.id) %>
+    <%= submit_tag("Buy") %>
+  <% end %>
