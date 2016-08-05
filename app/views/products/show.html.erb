@@ -7,6 +7,10 @@
             <h5><%= @supplier.name %></h5>
             <p>Price: <%= @product.price %></p>
             <p>Tax: <%= @product.tax %></p>
+            <h4>Categories:</h4>
+            <% @product.categories.each do |category| %>
+              <li><%= category.name %></li>
+            <% end %>
             <p id="red-price">For a total of: <%= @product.total %></p>
             <% @product.images.each do |image| %>
               <img src="<%= image.link %>" width="150" alt="" class="">
