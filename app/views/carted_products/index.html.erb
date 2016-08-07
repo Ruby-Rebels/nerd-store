@@ -1,0 +1,11 @@
+<h3>Make your purchase!</h3>
+<% @carted_products.each do |carted_product| %>
+  <h4><%= carted_product.product.name %></h4>
+  <h4><%= carted_product.product.price %></h4>
+  <%= link_to "Remove from cart", "/carted_products/#{carted_product.id}", method: 'delete', class: 'btn btn-danger' %>
+<% end %>
+
+
+<%= form_tag("/orders", method: 'post') do %>
+  <%= submit_tag("Buy Now!", class: 'btn btn-primary') %>
+<% end %>
