@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     carted_products = current_user.carted_products.where(status: 'carted')
     order = Order.create(
@@ -11,6 +13,10 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find_by(id: params[:id])
-    @carted_products = @order.carted_products
+    if @order.user_id == current_user.id
+      @carted_products = @order.carted_products
+    else
+      redirect_to '/products'
+    end
   end
 end

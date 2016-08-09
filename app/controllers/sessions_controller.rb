@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
   def new
-    render 'new.html.erb'
+    if current_user
+      redirect_to '/products'
+    else
+      render 'new.html.erb'
+    end
   end
 
   def create

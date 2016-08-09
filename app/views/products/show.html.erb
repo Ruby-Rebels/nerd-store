@@ -16,8 +16,10 @@
               <img src="<%= image.link %>" width="150" alt="" class="">
             <% end %>
             <p>Description: <%= @product.description %></p>
-            <%= link_to "Edit", "/products/#{@product.id}/edit", class: "btn btn-success" %>
-            <%= link_to "Delete", "/products/#{@product.id}", {method: :delete, class: "btn btn-danger" }%>
+            <% if current_user && current_user.admin %>
+              <%= link_to "Edit", "/products/#{@product.id}/edit", class: "btn btn-success" %>
+              <%= link_to "Delete", "/products/#{@product.id}", {method: :delete, class: "btn btn-danger" }%>
+            <% end %>
         </div>
       </div>
     </div>

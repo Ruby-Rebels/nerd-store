@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authorize_admin!, except: [:index, :show, :search]
+
   def index
     @products = Product.all
     if params[:blah] && params[:blah_blah]
@@ -14,18 +16,23 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @product = Product.new
+    render "new.html.erb"
   end
 
   def create
     @product = Product.create(
       name: params[:name],
       description: params[:description],
-      image: params[:image],
       price: params[:price]
-      )
-
-    flash[:success] = "Product Created"
-    redirect_to "/products/#{@product.id}"
+    )
+    if @product.valid?
+      flash[:success] = "Product Created"
+      redirect_to "/products/#{@product.id}"
+    else
+      flash[:danger] = @product.errors.full_messages
+      render "new.html.erb"
+    end
   end
 
   def show
@@ -58,7 +65,7 @@ class ProductsController < ApplicationController
     @product = Product.find_by(id: params[:id])
     @product.destroy
 
-    flash[:warning] = "Product Created"
+    flash[:warning] = "Product Destroyed"
     redirect_to "/"
   end
 

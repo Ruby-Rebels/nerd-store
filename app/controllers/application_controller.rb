@@ -11,4 +11,11 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     redirect_to '/login' unless current_user
   end
+
+  def authorize_admin!
+    unless current_user && current_user.admin
+      flash[:warning] = "And stay out!"
+      redirect_to '/products'
+    end
+  end
 end

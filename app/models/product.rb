@@ -5,6 +5,9 @@ class Product < ActiveRecord::Base
   has_many :categories, through: :category_products
   has_many :carted_products
   has_many :orders, through: :carted_products
+  validates :name, :description, presence: true
+  validates :name, uniqueness: true
+  validates :price, numericality: true
 
   def sale_message
     if price.to_i < 2
