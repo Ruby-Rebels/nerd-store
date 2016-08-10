@@ -53,12 +53,17 @@ class ProductsController < ApplicationController
     @product.update(
       name: params[:name],
       description: params[:description],
-      image: params[:image],
       price: params[:price]
-      )
+    )
 
-    flash[:success] = "Product Updated"
-    redirect_to "/products/#{@product.id}"
+    if @product.valid?
+      flash[:success] = "Product Updated"
+      redirect_to "/products/#{@product.id}"
+    else
+      flash[:danger] = @product.errors.full_messages
+      #flash = {danger: ["Name can't be blank", "Description can't be blank"]}
+      render "edit"
+    end
   end
 
   def destroy
